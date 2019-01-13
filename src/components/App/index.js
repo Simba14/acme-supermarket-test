@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Basket from '../Basket';
 import Products from '../Products';
 
 import { GlobalStyle } from '../../theme/globalStyle';
@@ -24,6 +25,7 @@ export default class App extends React.Component {
 				<div>
 					<h1>ACME Supermarket</h1>
 					<Products />
+					<Basket basket={[{ title: 'Strawbs', price: 3.0 }]} total={3.0} />
 				</div>
 			</Wrapper>
 		);
