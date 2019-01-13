@@ -34,8 +34,12 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "lodash.mapvalues": "^4.6.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-actions": "^2.6.4",
     "styled-components": "^4.0.2"
   },
   "jest": {

@@ -25,7 +25,7 @@ export default class App extends React.Component {
 				<div>
 					<h1>ACME Supermarket</h1>
 					<Products />
-					<Basket basket={[{ title: 'Strawbs', price: 3.0 }]} total={3.0} />
+					<Basket total={3.0} />
 				</div>
 			</Wrapper>
 		);

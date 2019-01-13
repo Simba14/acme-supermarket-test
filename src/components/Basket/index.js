@@ -1,13 +1,30 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
 
-export default ({basket, total}) =>
-  <div>
-    <h4>Your Order</h4>
-    {basket.map(item =>
-      <div>
-        <span>{item.title}</span>
-        <span>£{item.price}</span>
-      </div>
-    )}
-    <h5>Total: £{total}</h5>
-  </div>
+import { actions } from './state';
+
+const Basket = ({ basket, total }) => (
+	<div>
+		<h4>Your Order</h4>
+		{basket.map((item, index) => (
+			<div key={item.code + index}>
+				<span>{item.name}</span>
+				<span>£{item.price}</span>
+			</div>
+		))}
+		<h5>Total: £{total}</h5>
+	</div>
+);
+
+const mapStateToProps = ({ basket }) => ({
+	basket: basket.basket
+});
+
+const mapDispatchToProps = {
+	removeItem: actions.removeItem
+};
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Basket);
