@@ -4,6 +4,8 @@ import { css } from 'styled-components';
 
 import Card from '../Card';
 
+import { gutterSize } from '../../theme/constants';
+
 const styles = css`
 	align-items: flex-start;
 	> div {
@@ -19,8 +21,8 @@ const styles = css`
 	.Total {
 		font-weight: bold;
 		border-top: 1px solid grey;
-		margin-top: 8px;
-		padding-top: 8px;
+		margin-top: calc(${gutterSize} / 2);
+		padding-top: calc(${gutterSize} / 2);
 	}
 `;
 

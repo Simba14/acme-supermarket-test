@@ -5,6 +5,7 @@ import Basket from '../Basket';
 import Products from '../Products';
 
 import { GlobalStyle } from '../../theme/globalStyle';
+import { gutterSize } from '../../theme/constants';
 
 const Wrapper = styled.div`
 	background: palevioletred;
@@ -16,13 +17,13 @@ const Wrapper = styled.div`
 	width: 100%;
 	line-height: 2em;
 	h1 {
-		padding-left: 32px;
+		padding-left: calc(${gutterSize} * 2);
 	}
-	> div {
+	.Content {
 		background: #eee;
 		color: black;
 		min-height: 80vh;
-		padding: 32px;
+		padding: calc(${gutterSize} * 2);
 	}
 `;
 
@@ -32,9 +33,9 @@ export default class App extends React.Component {
 			<Wrapper>
 				<GlobalStyle />
 				<h1>ACME Supermarket</h1>
-				<div>
+				<div className={'Content'}>
 					<Products />
-					<Basket total={3.0} />
+					<Basket />
 				</div>
 			</Wrapper>
 		);
