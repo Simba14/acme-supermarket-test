@@ -26,7 +26,7 @@ const styles = css`
 	}
 `;
 
-const Basket = ({ basket, total }) => {
+export const Basket = ({ basket, total }) => {
 	if (!basket || basket.length < 1) return null;
 
 	return (

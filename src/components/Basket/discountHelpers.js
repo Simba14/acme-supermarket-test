@@ -1,5 +1,5 @@
-export default (updatedBasket, item, total) => {
-	const itemFrequency = itemTypeFrequency(updatedBasket, item.code);
+export default (basket, item, total) => {
+	const itemFrequency = itemTypeFrequency(basket, item.code);
 	const itemPrice = item.discount
 		? getDiscount(itemFrequency, item)
 		: item.price;
@@ -7,7 +7,7 @@ export default (updatedBasket, item, total) => {
 	return total + itemPrice;
 };
 
-const itemTypeFrequency = (basket, code) => {
+export const itemTypeFrequency = (basket, code) => {
 	const itemArray = basket.filter(item => item.code === code);
 	return itemArray.length;
 };
@@ -28,4 +28,4 @@ const getDiscount = (frequency, item) => {
 	return price;
 };
 
-const calculateDiscount = item => item.price * (1 - item.discount.value);
+export const calculateDiscount = item => item.price * (1 - item.discount.value);
