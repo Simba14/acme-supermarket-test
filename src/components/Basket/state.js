@@ -1,5 +1,6 @@
 import { createAction } from 'redux-actions';
 import mapValues from 'lodash.mapvalues';
+import calculateTotal from './discountHelpers';
 
 export const types = {
 	addItem: 'Basket/addItem',
@@ -7,38 +8,6 @@ export const types = {
 };
 
 export const actions = mapValues(types, type => createAction(type));
-
-const calculateTotal = (updatedBasket, item, total) => {
-	const itemFrequency = itemTypeFrequency(updatedBasket, item.code);
-	const itemPrice = item.discount
-		? getDiscount(itemFrequency, item)
-		: item.price;
-	console.log(itemPrice);
-	return total + itemPrice;
-};
-
-const getDiscount = (frequency, item) => {
-	if (item.discount.repeats) {
-		if (frequency % item.discount.threshold === 0) {
-			return calculateDiscount(item);
-		}
-		return item.price;
-	}
-	if (frequency > item.discount.threshold) return calculateDiscount(item);
-	if (frequency === item.discount.threshold)
-		return (
-			item.price -
-			(item.price - calculateDiscount(item)) * item.discount.threshold
-		);
-	return item.price;
-};
-
-const calculateDiscount = item => item.price * (1 - item.discount.value);
-
-const itemTypeFrequency = (basket, code) => {
-	const itemArray = basket.filter(item => item.code === code);
-	return itemArray.length;
-};
 
 const initialState = {
 	basket: [],
