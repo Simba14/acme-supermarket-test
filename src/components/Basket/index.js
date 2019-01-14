@@ -17,7 +17,8 @@ const Basket = ({ basket, total }) => (
 );
 
 const mapStateToProps = ({ basket }) => ({
-	basket: basket.basket
+	basket: basket.basket,
+	total: basket.total
 });
 
 const mapDispatchToProps = {
