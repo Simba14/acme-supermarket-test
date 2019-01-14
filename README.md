@@ -7,7 +7,7 @@ Styled Components has been used to style.
 Redux has been used to manage the application's state.
 Jest and Enzyme have been used to write unit tests.
 
-Add items to your basket [here](link)
+Add items to your basket [here](https://supermarket-acme-blundell.herokuapp.com/)
 
 Run Locally:
 -----

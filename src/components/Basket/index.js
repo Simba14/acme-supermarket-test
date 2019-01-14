@@ -40,7 +40,7 @@ export const Basket = ({ basket, total }) => {
 			))}
 			<div className={'Total'}>
 				<div>Total</div>
-				<div>£{total}</div>
+				<div>£{total.toFixed(2)}</div>
 			</div>
 		</Card>
 	);
