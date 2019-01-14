@@ -5,13 +5,11 @@ import Product from '../Product';
 import productsData from '../../../data/products.json';
 
 const Container = styled.div`
-	background: white;
-	color: black;
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
-	margin: auto;
-	padding: 32px;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 100%;
 `;
 
 export default () => (

@@ -3,8 +3,7 @@ import mapValues from 'lodash.mapvalues';
 import calculateTotal from './discountHelpers';
 
 export const types = {
-	addItem: 'Basket/addItem',
-	removeItem: 'Basket/removeItem'
+	addItem: 'Basket/addItem'
 };
 
 export const actions = mapValues(types, type => createAction(type));
@@ -23,10 +22,7 @@ export default (state = initialState, action) => {
 				basket: updatedBasket,
 				total: calculateTotal(updatedBasket, action.payload, state.total)
 			};
-		case types.removeItem:
-			return {
-				basket: state.basket.splice(action.payload, 1)
-			};
+
 		default:
 			return state;
 	}

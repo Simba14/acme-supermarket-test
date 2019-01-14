@@ -8,7 +8,7 @@ const Button = styled.div`
 	align-items: center;
 	justify-content: center;
 	height: 40px;
-	width: 290px;
+	width: 270px;
 	margin-top: 16px;
 	cursor: pointer;
 	text-transform: uppercase;

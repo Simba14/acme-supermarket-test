@@ -15,6 +15,15 @@ const Wrapper = styled.div`
 	min-height: 100vh;
 	width: 100%;
 	line-height: 2em;
+	h1 {
+		padding-left: 32px;
+	}
+	> div {
+		background: #eee;
+		color: black;
+		min-height: 80vh;
+		padding: 32px;
+	}
 `;
 
 export default class App extends React.Component {
@@ -22,8 +31,8 @@ export default class App extends React.Component {
 		return (
 			<Wrapper>
 				<GlobalStyle />
+				<h1>ACME Supermarket</h1>
 				<div>
-					<h1>ACME Supermarket</h1>
 					<Products />
 					<Basket total={3.0} />
 				</div>

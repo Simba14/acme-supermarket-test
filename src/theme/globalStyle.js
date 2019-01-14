@@ -14,4 +14,8 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+
+  h1, h3, h4, h5 {
+    text-transform: uppercase;
+  }
 `

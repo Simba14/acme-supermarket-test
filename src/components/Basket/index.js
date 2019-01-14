@@ -1,31 +1,52 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { css } from 'styled-components';
 
-import { actions } from './state';
+import Card from '../Card';
 
-const Basket = ({ basket, total }) => (
-	<div>
-		<h4>Your Order</h4>
-		{basket.map((item, index) => (
-			<div key={item.code + index}>
-				<span>{item.name}</span>
-				<span>£{item.price}</span>
+const styles = css`
+	align-items: flex-start;
+	> div {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	h3 {
+		margin-top: 0px;
+	}
+
+	.Total {
+		font-weight: bold;
+		border-top: 1px solid grey;
+		margin-top: 8px;
+		padding-top: 8px;
+	}
+`;
+
+const Basket = ({ basket, total }) => {
+	if (!basket || basket.length < 1) return null;
+
+	return (
+		<Card styles={styles}>
+			<h3>Basket</h3>
+			{basket.map((item, index) => (
+				<div className={'Item'} key={item.code + index}>
+					<div>{item.name}</div>
+					<div>£{item.price}</div>
+				</div>
+			))}
+			<div className={'Total'}>
+				<div>Total</div>
+				<div>£{total}</div>
 			</div>
-		))}
-		<h5>Total: £{total}</h5>
-	</div>
-);
+		</Card>
+	);
+};
 
 const mapStateToProps = ({ basket }) => ({
 	basket: basket.basket,
 	total: basket.total
 });
 
-const mapDispatchToProps = {
-	removeItem: actions.removeItem
-};
-
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(Basket);
+export default connect(mapStateToProps)(Basket);
