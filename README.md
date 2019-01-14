@@ -1,6 +1,31 @@
 # ACME Supermarket
 
-Create a solution for the ACME Supermarket problem.
+A simple supermarket web app built using React.
+The app allows users to add items to their basket and
+
+Styled Components has been used to style.
+Redux has been used to manage the application's state.
+Jest and Enzyme have been used to write unit tests.
+
+Add items to your basket [here](link)
+
+Run Locally:
+-----
+1. Open your terminal
+2. Change into the directory where the app is stored: `cd acme-supermarket-test`
+3. Run `npm run dev`
+4. Open your browser and go to http://localhost:8080/
+5. Shop away!
+
+To run tests, type in `npm run test`
+
+Things To Improve On:
+-----
+
+- Write unit tests for components.
+- Add responsive styling to allow for different screen sizes.
+- Enable remove items functionality.
+- Indicate on the product cards UI an item's discount.
 
 ## Description of the problem
 
